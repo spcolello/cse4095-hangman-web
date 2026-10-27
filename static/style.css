@@ -1,0 +1,43 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#202720;background:#f4f1e9;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;min-width:300px}
+button,select{font:inherit}
+button:focus-visible,select:focus-visible{outline:3px solid #a84f30;outline-offset:3px}
+.shell{max-width:1120px;margin:0 auto;padding:48px 36px 32px}
+.masthead{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:38px}
+.edition{font-size:13px;font-weight:700;color:#6c7568;margin:0 0 12px;text-transform:uppercase;letter-spacing:.05em}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(54px,8vw,91px);line-height:.95;letter-spacing:-.06em;font-weight:700;margin:0}
+.period{color:#ad4c2a}
+.intro{max-width:280px;color:#5c665c;line-height:1.5;margin:0 0 5px}
+.game{background:#fffdf7;border:1px solid #d9d7ce;border-radius:10px;overflow:hidden}
+.game-top{display:flex;justify-content:space-between;align-items:end;gap:18px;padding:22px 30px;border-bottom:1px solid #e3e0d6}
+.difficulty-control{display:flex;align-items:center;gap:14px}
+.difficulty-control label{font-size:14px;font-weight:700}
+select{min-width:130px;padding:10px 34px 10px 13px;border:1px solid #bfc5b9;border-radius:7px;background:#fff;color:#202720}
+.primary-button{border:0;border-radius:7px;background:#2f513e;color:#fff;padding:12px 20px;font-weight:700;cursor:pointer;min-height:44px}
+.primary-button:hover{background:#244432}
+.primary-button:disabled{opacity:.55;cursor:wait}
+.board{display:grid;grid-template-columns:minmax(260px,40%) 1fr;min-height:440px}
+.drawing-panel{background:#e6e8df;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;color:#394b3b}
+.drawing{width:min(100%,280px);height:auto}
+.figure [data-part]{visibility:hidden}
+.figure [data-part].visible{visibility:visible}
+.attempts{display:flex;align-items:baseline;gap:9px;margin-top:4px;color:#475647;font-size:15px}
+.attempts #remaining{font-family:Georgia,'Times New Roman',serif;font-size:38px;font-weight:700;color:#202720}
+.play-panel{padding:38px 42px;display:flex;flex-direction:column;justify-content:center}
+.message{font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:1.25;min-height:60px}
+.message.error{color:#9a3b28}
+.pattern{display:flex;flex-wrap:wrap;gap:8px;margin:23px 0 20px;min-height:56px}
+.slot{width:34px;height:47px;border-bottom:2px solid #536957;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:31px;line-height:44px;text-transform:uppercase}
+.guessed-line{font-size:14px;color:#59625a;margin:0 0 27px;min-height:20px}
+#guessed{font-weight:700;color:#27362a;letter-spacing:.04em}
+.keyboard{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:7px;max-width:450px}
+.letter{aspect-ratio:1;min-height:36px;border:1px solid #a9b4a6;border-radius:7px;background:#fff;color:#253729;font-weight:700;cursor:pointer}
+.letter:hover:not(:disabled){background:#e1e9de}
+.letter:disabled{cursor:default;background:#e9eae5;color:#7b837a;border-color:#d8ddd4}
+.letter.correct:disabled{background:#d6e7d1;color:#285133;border-color:#c3d7bb}
+.letter.incorrect:disabled{background:#eee4df;color:#8a4b37;border-color:#e2d3ca}
+.keyboard-hint{font-size:13px;color:#6a7469;margin:17px 0 0}
+footer{font-size:13px;color:#737b70;margin-top:21px}
+@media(max-width:720px){.shell{padding:28px 16px}.masthead{display:block;margin-bottom:26px}.intro{margin-top:16px}.game-top{padding:17px;align-items:center}.board{grid-template-columns:1fr}.drawing-panel{padding:12px;min-height:230px}.drawing{width:190px}.attempts #remaining{font-size:30px}.play-panel{padding:27px 18px 32px}.message{font-size:22px;min-height:auto}.pattern{gap:5px}.slot{width:30px}.keyboard{grid-template-columns:repeat(7,minmax(0,1fr));max-width:none}}
+@media(max-width:380px){.game-top{flex-wrap:wrap}.primary-button{width:100%}.slot{width:26px;font-size:26px}}

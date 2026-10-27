@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="edition">The word game</p>
+        <h1>Hangman<span class="period">.</span></h1>
+      </div>
+      <p class="intro">Find the word before six missed letters complete the drawing.</p>
+    </header>
+
+    <section class="game" aria-label="Hangman game">
+      <div class="game-top">
+        <div class="difficulty-control">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty" name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button id="new-game" class="primary-button" type="button">New game</button>
+      </div>
+
+      <div class="board">
+        <div class="drawing-panel">
+          <svg class="drawing" viewBox="0 0 260 260" role="img" aria-labelledby="drawing-title drawing-desc">
+            <title id="drawing-title">Hangman drawing</title>
+            <desc id="drawing-desc">The drawing changes with each incorrect guess.</desc>
+            <g class="gallows" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M34 240h166M67 240V22h107v32"/>
+            </g>
+            <g class="figure" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+              <circle data-part="1" cx="174" cy="78" r="24"/>
+              <path data-part="2" d="M174 102v68"/>
+              <path data-part="3" d="M174 121l-39 30"/>
+              <path data-part="4" d="M174 121l39 30"/>
+              <path data-part="5" d="M174 170l-35 43"/>
+              <path data-part="6" d="M174 170l35 43"/>
+            </g>
+          </svg>
+          <div class="attempts"><span id="remaining">6</span><span>misses left</span></div>
+        </div>
+
+        <div class="play-panel">
+          <div id="message" class="message" role="status" aria-live="polite">Choose a difficulty and start a game.</div>
+          <div id="pattern" class="pattern" aria-label="Word pattern"></div>
+          <p class="guessed-line">Guessed letters: <span id="guessed">None yet</span></p>
+          <div id="keyboard" class="keyboard" aria-label="Letter choices"></div>
+          <p class="keyboard-hint">Use the letter buttons or your keyboard.</p>
+        </div>
+      </div>
+    </section>
+    <footer>Six misses. One word. A fresh game whenever you like.</footer>
+  </main>
+</body>
+</html>
