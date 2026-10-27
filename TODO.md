@@ -36,8 +36,9 @@ This plan adapts the provided `TODO.md` to the web game required by the assignme
 ## Phase 5 - Deployment and submission
 
 - [x] Provide `requirements.txt`, `render.yaml`, and `.gitignore`.
-- [ ] Create and push the GitHub repository.
-- [ ] Deploy to Render and verify an HTTPS browser game and API.
+- [x] Create and push the GitHub repository.
+- [x] Deploy to Render and verify an HTTPS browser game and API.
+- [x] Prepare the two-page PDF development report.
 - [ ] Submit the repository URL and deployed URL through HuskyCT.
 - [ ] Record the 2-3 minute deployed-app demonstration and submit it.
 - [ ] Submit the final 1-2 page PDF report.

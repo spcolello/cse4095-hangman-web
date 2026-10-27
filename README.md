@@ -2,6 +2,9 @@
 
 A Flask-backed Hangman game for the CSE 4095 web application assignment. The Python game engine owns the answer and rules; the browser uses `fetch()` to create games and submit guesses. No terminal client, bots, evaluation system, or leaderboard are included because the assignment excludes them.
 
+**Live app:** <https://cse4095-hangman-web.onrender.com/>  
+**GitHub repository:** <https://github.com/spcolello/cse4095-hangman-web>
+
 ## Run locally
 
 Use Python 3.10 or newer. From this directory:
@@ -52,10 +55,7 @@ curl http://127.0.0.1:5000/api/games/GAME_ID
 
 ## Deploy on Render
 
-1. Push this directory to a GitHub repository. Keep `render.yaml` at the repository root.
-2. In Render, create a **Blueprint** from that repository. Render reads the included `render.yaml`. Alternatively, create a Python web service using build command `pip install -r requirements.txt` and start command `gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app`.
-3. Wait for a successful deploy. Open its HTTPS URL, start a game, play it to completion, and test the three API endpoints on that URL.
-4. Save the exact GitHub and Render URLs for the course submission. Keep the service available through grading.
+The current service was deployed from the linked GitHub repository as a Render Python 3 web service on the Free plan. It uses build command `pip install -r requirements.txt` and start command `gunicorn --bind 0.0.0.0:$PORT --workers 1 server:app`. The included `render.yaml` also supports a Blueprint setup. Render reported the first deployment live on October 27, 2026. The HTTPS browser game and the three API endpoints were then tested. Keep the service available through grading.
 
 The service stores games in memory and uses one Gunicorn worker so requests for a game reach the same process. A Render restart clears active games. This is acceptable for the assignment's casual game, but persistent games would require a shared data store.
 
